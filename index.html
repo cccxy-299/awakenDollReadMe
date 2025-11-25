@@ -48,6 +48,7 @@
 
         <nav id="tab-nav" class="flex flex-wrap justify-center border-b border-slate-200 mb-8 gap-2 sm:gap-4">
             <button data-target="quick-start" class="tab-button active text-sm sm:text-base px-3 py-2 border-b-2 border-transparent transition-colors duration-300">快速上手</button>
+			<button data-target="readme" class="tab-button text-sm sm:text-base px-3 py-2 border-b-2 border-transparent transition-colors duration-300">常用功能</button>
             <button data-target="specs" class="tab-button text-sm sm:text-base px-3 py-2 border-b-2 border-transparent transition-colors duration-300">技术规格</button>
             <button data-target="faq" class="tab-button text-sm sm:text-base px-3 py-2 border-b-2 border-transparent transition-colors duration-300">常见问题</button>
             <button data-target="precautions" class="tab-button text-sm sm:text-base px-3 py-2 border-b-2 border-transparent transition-colors duration-300">注意事项</button>
@@ -56,13 +57,25 @@
 
         <main>
             <section id="quick-start" class="content-section active">
+				<h2 class="text-2xl font-bold mb-6 text-slate-900">快速跳转</h2>
+				<div class="flex space-x-4 mb-6">
+				  <button onclick="scrollToStep('step1')" 
+				          class="px-4 py-2 bg-cyan-600 text-white rounded-lg shadow">
+				      跳到步骤 1
+				  </button>
+				
+				  <button onclick="scrollToStep('step2')" 
+				          class="px-4 py-2 bg-cyan-600 text-white rounded-lg shadow">
+				      跳到步骤 2
+				  </button>
+				</div>
                 <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm">
-                    <h2 class="text-2xl font-bold mb-6 text-slate-900">快速上手指南</h2>
+                    <h2 class="text-2xl font-bold mb-6 text-slate-900">首次使用教程</h2>
                     <p class="text-slate-600 mb-8">欢迎使用 AI 对话模块！为了给您最好的体验，我们设计了这份交互式指南。请按照以下步骤操作，只需几分钟，即可开启您的智能对话之旅。</p>
                     
                     <div class="space-y-8">
                         <!-- Step 1 -->
-                        <div class="flex items-start">
+                        <div id="step1" class="flex items-start">
                             <div class="flex-shrink-0 w-10 h-10 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">1</div>
                             <div class="flex-1">
                                 <h3 class="text-lg font-semibold text-slate-800 mb-2">首次使用准备</h3>
@@ -74,7 +87,7 @@
                             </div>
                         </div>
                         <!-- Step 2 -->
-                        <div class="flex items-start">
+                        <div id="step2" class="flex items-start">
                             <div class="flex-shrink-0 w-10 h-10 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">2</div>
                             <div class="flex-1">
                                 <h3 class="text-lg font-semibold text-slate-800 mb-2">网络配置 (配网)</h3>
@@ -132,7 +145,103 @@
                     </div>
                 </div>
             </section>
-
+			
+			<!-- 操作说明 -->
+			<section id="readme" class="content-section">
+				
+				<h2 class="text-2xl font-bold mb-6 text-slate-900">快速跳转</h2>
+				<div class="flex space-x-4 mb-6">
+				  <button onclick="scrollToStep('device_control')" 
+				          class="px-4 py-2 bg-cyan-600 text-white rounded-lg shadow">
+				      设备控制
+				  </button>
+				
+				  <button onclick="scrollToStep('oc')" 
+				          class="px-4 py-2 bg-cyan-600 text-white rounded-lg shadow">
+				      OC配置
+				  </button>
+				  
+				  <button onclick="scrollToStep('eye_replace')"
+				          class="px-4 py-2 bg-cyan-600 text-white rounded-lg shadow">
+				      电子眼替换
+				  </button>
+				  
+				  <button onclick="scrollToStep('eye_make')"
+				          class="px-4 py-2 bg-cyan-600 text-white rounded-lg shadow">
+				      电子眼制作
+				  </button>
+				  
+				</div>
+				
+			    <div id='device_control' class="bg-white p-6 sm:p-8 rounded-xl shadow-sm">
+			        <h2 class="text-2xl font-bold mb-6 text-slate-900">设备控制</h2>
+			        <div class="overflow-x-auto">
+			            <table class="w-full text-left border-collapse">
+			                <tbody class="divide-y divide-slate-200">
+			                    <tr class="hover:bg-slate-50">
+			                        <td class="py-3 px-4 font-semibold text-slate-700 whitespace-nowrap">设备开机</td>
+			                        <td class="py-3 px-4 text-slate-600">关机状态下，长按 2 秒开机键，启动Awaken Doll</td>
+			                    </tr>
+			                    <tr class="hover:bg-slate-50">
+			                        <td class="py-3 px-4 font-semibold text-slate-700 whitespace-nowrap">设备关机</td>
+			                        <td class="py-3 px-4 text-slate-600 font-bold">开机状态下，长按 3 秒开机键，关闭Awaken Doll</td>
+			                    </tr>
+								<tr class="hover:bg-slate-50">
+								    <td class="py-3 px-4 font-semibold text-slate-700 whitespace-nowrap">自动关机</td>
+								    <td class="py-3 px-4 text-slate-600 ">待机状态下，5 分钟未接收到任何指令，自动关闭。</td>
+								</tr>
+								<tr class="hover:bg-slate-50">
+								    <td class="py-3 px-4 font-semibold text-slate-700 whitespace-nowrap">设备待机</td>
+								    <td class="py-3 px-4 text-slate-600">
+										1. 唤醒状态下，用户可通过语音控制(例如：“退下”，“进入待机状态”)控制awaken doll待机；
+										2.  唤醒状态下，设备 1 分钟未接收到任何指令，则自动进入待机状态。
+									</td>
+								</tr>
+			                    <tr class="hover:bg-slate-50">
+			                        <td class="py-3 px-4 font-semibold text-slate-700 whitespace-nowrap whitespace-nowrap">WIFI模式</td>
+			                        <td class="py-3 px-4 text-slate-600">4G模式下，长按 5秒 打断键，即可切换WIFI模式。</td>
+			                    </tr>
+								
+								<tr class="hover:bg-slate-50">
+								    <td class="py-3 px-4 font-semibold text-slate-700 whitespace-nowrap">重置WIFI</td>
+								    <td class="py-3 px-4 text-slate-600">开机状态下，长按 5秒 打断键，即可移除已配置的WIFI并重新配置。</td>
+								</tr>
+			                    <tr class="hover:bg-slate-50">
+			                        <td class="py-3 px-4 font-semibold text-slate-700 whitespace-nowrap">设备唤醒</td>
+			                        <td class="py-3 px-4 text-slate-600">待机状态下，按一下 打断键，即可唤醒设备</td>
+			                    </tr>
+			                    <tr class="hover:bg-slate-50">
+			                        <td class="py-3 px-4 font-semibold text-slate-700 whitespace-nowrap">打断对话</td>
+			                        <td class="py-3 px-4 text-slate-600">对话时，按一下 打断键，即可中断设备语音输出</td>
+			                    </tr>
+			                </tbody>
+			            </table>
+			        </div>
+			    </div>
+				
+				
+				<div id='oc' class="bg-white p-6 sm:p-8 rounded-x shadow-sm mt-4">
+				    <h2 class="text-2xl font-bold mb-6 text-slate-900">OC配置</h2>
+				    <div class="overflow-x-auto">
+				    
+				    </div>
+				</div>
+				
+				<div id='eye_replace' class="bg-white p-6 sm:p-8 rounded-x shadow-sm mt-4">
+				    <h2 class="text-2xl font-bold mb-6 text-slate-900">电子眼替换</h2>
+				    <div class="overflow-x-auto">
+				    
+				    </div>
+				</div>
+				
+				<div id='eye_make' class="bg-white p-6 sm:p-8 rounded-x shadow-sm mt-4">
+				    <h2 class="text-2xl font-bold mb-6 text-slate-900">电子眼制作</h2>
+				    <div class="overflow-x-auto">
+				    
+				    </div>
+				</div>
+			</section>
+			
             <section id="specs" class="content-section">
                 <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm">
                     <h2 class="text-2xl font-bold mb-6 text-slate-900">技术规格</h2>
@@ -264,6 +373,11 @@
     </div>
 
     <script>
+		function scrollToStep(id) {
+		    document.getElementById(id).scrollIntoView({
+		        behavior: 'smooth'
+		    });
+		}
         document.addEventListener('DOMContentLoaded', function () {
             const tabButtons = document.querySelectorAll('.tab-button');
             const contentSections = document.querySelectorAll('.content-section');
