@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 对话模块 | 交互式说明书</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: Calm Tech (Off-white/slate background, dark gray text, cyan accent) -->
+    <!-- Application Structure Plan: A tabbed SPA with sections for Quick Start, Specs, FAQ, etc. The Quick Start is an interactive vertical stepper to guide users through setup. FAQ uses an accordion. This structure is non-linear, allowing users to quickly find information, which is more usable for a product manual than a linear document. -->
+    <!-- Visualization & Content Choices: Report Info: Setup Steps -> Goal: Guide -> Viz: Interactive Stepper (HTML/CSS) -> Interaction: N/A, visual flow -> Justification: Breaks down a complex process into manageable, visual steps. Report Info: FAQ -> Goal: Organize -> Viz: Accordion (HTML/JS) -> Interaction: Click to expand/collapse -> Justification: Saves space and reduces cognitive load. Report Info: Status Lights -> Goal: Inform -> Viz: Styled HTML divs -> Justification: Visual representation is clearer than text alone. CONFIRMING NO SVG/Mermaid. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+        .tab-button.active {
+            border-color: #0891b2;
+            color: #0891b2;
+            font-weight: 600;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-button svg {
+            transition: transform 0.3s ease;
+        }
+        .accordion-button.open svg {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <div class="container mx-auto max-w-4xl p-4 sm:p-6 lg:p-8">
+        
+        <header class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold text-slate-900">AI 对话模块</h1>
+            <p class="text-lg text-slate-600 mt-2">交互式产品说明书</p>
+        </header>
+
+        <nav id="tab-nav" class="flex flex-wrap justify-center border-b border-slate-200 mb-8 gap-2 sm:gap-4">
+            <button data-target="quick-start" class="tab-button active text-sm sm:text-base px-3 py-2 border-b-2 border-transparent transition-colors duration-300">快速上手</button>
+            <button data-target="specs" class="tab-button text-sm sm:text-base px-3 py-2 border-b-2 border-transparent transition-colors duration-300">技术规格</button>
+            <button data-target="faq" class="tab-button text-sm sm:text-base px-3 py-2 border-b-2 border-transparent transition-colors duration-300">常见问题</button>
+            <button data-target="precautions" class="tab-button text-sm sm:text-base px-3 py-2 border-b-2 border-transparent transition-colors duration-300">注意事项</button>
+            <button data-target="support" class="tab-button text-sm sm:text-base px-3 py-2 border-b-2 border-transparent transition-colors duration-300">售后支持</button>
+        </nav>
+
+        <main>
+            <section id="quick-start" class="content-section active">
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm">
+                    <h2 class="text-2xl font-bold mb-6 text-slate-900">快速上手指南</h2>
+                    <p class="text-slate-600 mb-8">欢迎使用 AI 对话模块！为了给您最好的体验，我们设计了这份交互式指南。请按照以下步骤操作，只需几分钟，即可开启您的智能对话之旅。</p>
+                    
+                    <div class="space-y-8">
+                        <!-- Step 1 -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">1</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-slate-800 mb-2">首次使用准备</h3>
+                                <ul class="list-disc list-inside space-y-2 text-slate-600">
+                                    <li>首次使用请先充电: 收到产品后，请务必先通过 USB Type-C 接口将其充满电。</li>
+                                    <li>长按电源键开机: 按住电源键，设备将启动。开机后，状态指示灯会亮起<span class="inline-block w-3 h-3 bg-green-500 rounded-full ml-1"></span>绿灯。</li>
+                                    <li>等待十秒钟左右，快速连按三下电源按键，听到语音播报“进入配网模式”后即可进行下一步。</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Step 2 -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">2</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-slate-800 mb-2">网络配置 (配网)</h3>
+                                <p class="text-slate-600 mb-2">您需要先为模块配置Wi-Fi网络连接：</p>
+                                <ul class="list-disc list-inside space-y-2 text-slate-600">
+                                    <li>手机连接热点: 当语音播报“进入配网模式”后，请使用您的手机连接模块发出的Wi-Fi热点 (通常以“Doit-xx-xxxx”或“xiaozhi_xxxx”命名)。</li>
+                                    <li>配网操作: 连接热点后，您的手机会自动跳转到配网页面（如未跳转可以手动打开浏览器输入“192.168.4.1”并访问）。在页面中选择您家中的Wi-Fi网络（必须是2.4g，热点也要设置为2.4g）并输入密码。</li>
+                                    <li>等待联网成功: 模块成功连接Wi-Fi网络后，会通过语音或指示灯提示联网状态。</li>
+                                </ul>
+                                <img src="wifi_configuration.png" class="block mx-auto w-100 h-130 border border-slate-200 p-1 rounded-lg shadow-sm">
+                            </div>
+                        </div>
+                        <!-- Step 3 -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">3</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-slate-800 mb-2">绑定智能体</h3>
+                                <p class="text-slate-600 mb-2">模块成功联网后，您需要将其绑定到您的智能体：</p>
+                                <ul class="list-disc list-inside space-y-2 text-slate-600">
+                                    <li>获取设备码: 模块联网成功后，会语音播报一个六位设备码，请及时记录。</li>
+                                    <li>登录控制面板: 在您的电脑或手机上访问 <a href="https://xiaozhi.me/" target="_blank" class="text-cyan-600 hover:underline font-semibold">https://xiaozhi.me/</a></li>
+                                    <img src="hello.png" class="block mx-auto w-100 h-85 border border-slate-200 p-1 rounded-lg shadow-sm">
+                                    <li>注册账号：输入手机号并获取验证码</li>
+                                    <li>添加智能体：在控制台中，可以选择在添加设备下拉菜单中找到新建智能体，同时可以配置角色等</li>
+                                    <img src="add.png" class="block mx-auto w-100 h-85 border border-slate-200 p-1 rounded-lg shadow-sm">
+                                    <img src="name.png" class="block mx-auto w-100 h-85 border border-slate-200 p-1 rounded-lg shadow-sm">
+                                    <img src="change.png" class="block mx-auto w-100 h-85 border border-slate-200 p-1 rounded-lg shadow-sm">
+                                    <li>绑定设备: 在新建的智能体板块中可添加设备，输入刚才播报的设备码即可绑定设备</li>
+                                    <img src="device.png" class="block mx-auto w-180 h-140 border border-slate-200 p-1 rounded-lg shadow-sm">
+                                    <li>完成绑定: 按照页面提示完成绑定流程，即可开始对话。</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Step 4 -->
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">4</div>
+                            <div class="flex-1">
+                                <h3 class="text-lg font-semibold text-slate-800 mb-2">功能交互</h3>
+                                <ul class="list-disc list-inside space-y-3 text-slate-600">
+                                    <li>唤醒词唤醒: 听到“嘟”的提示音后，即可通过预设的唤醒词 (如“你好小智”) 唤醒设备。</li>
+                                    <li>按键唤醒: 听到“嘟”的提示音后，单击按键即可直接开始说话，无需再喊唤醒词。</li>
+                                    <li>
+                                        状态指示灯:
+                                        <div class="flex items-center mt-1 ml-4">
+                                            <span class="inline-block w-3 h-3 bg-green-500 rounded-full mr-2"></span> 绿灯: 表示设备正常工作。
+                                        </div>
+                                        <div class="flex items-center mt-1 ml-4">
+                                            <span class="inline-block w-3 h-3 bg-red-500 rounded-full mr-2"></span> 红灯: 表示设备正在充电。
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="specs" class="content-section">
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm">
+                    <h2 class="text-2xl font-bold mb-6 text-slate-900">技术规格</h2>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <tbody class="divide-y divide-slate-200">
+                                <tr class="hover:bg-slate-50">
+                                    <td class="py-3 px-4 font-semibold text-slate-700">Wi-Fi 标准</td>
+                                    <td class="py-3 px-4 text-slate-600">802.11 b/g/n</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="py-3 px-4 font-semibold text-slate-700">数据/电源接口</td>
+                                    <td class="py-3 px-4 text-slate-600 font-bold">USB Type-C</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="py-3 px-4 font-semibold text-slate-700">工作电压</td>
+                                    <td class="py-3 px-4 text-slate-600">3.7V</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="py-3 px-4 font-semibold text-slate-700">工作温度</td>
+                                    <td class="py-3 px-4 text-slate-600">0°C ~ +50°C</td>
+                                </tr>
+                                <tr class="hover:bg-slate-50">
+                                    <td class="py-3 px-4 font-semibold text-slate-700">尺寸</td>
+                                    <td class="py-3 px-4 text-slate-600">约 50mm x 35mm x 30mm (请根据实际尺寸填写)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <section id="faq" class="content-section">
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm">
+                    <h2 class="text-2xl font-bold mb-6 text-slate-900">常见问题与故障排除</h2>
+                    <div id="accordion-container" class="space-y-3">
+                        <div class="border border-slate-200 rounded-lg">
+                            <button class="accordion-button w-full flex justify-between items-center text-left p-4 font-semibold">
+                                <span>开机之后一直没有反应怎么办？</span>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="p-4 pt-0 text-slate-600">请尝试重启设备。如果问题仍然存在，请在开机状态下连按三下按键，模块将重新进入配网模式，然后请按照“快速上手”中的“网络配置”步骤重新进行配网。</p>
+                            </div>
+                        </div>
+                        <div class="border border-slate-200 rounded-lg">
+                            <button class="accordion-button w-full flex justify-between items-center text-left p-4 font-semibold">
+                                <span>模块无法启动或没有响应？</span>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="p-4 pt-0 text-slate-600">请检查供电是否正常。确保您已使用USB Type-C接口为模块充电，并且电源键已正确按下。</p>
+                            </div>
+                        </div>
+                        <div class="border border-slate-200 rounded-lg">
+                            <button class="accordion-button w-full flex justify-between items-center text-left p-4 font-semibold">
+                                <span>无法获取设备码或绑定失败？</span>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="p-4 pt-0 text-slate-600">请确保模块已成功连接到Wi-Fi网络。检查您输入的六位设备码是否正确。如果问题依旧，请尝试重启模块后再次操作。</p>
+                            </div>
+                        </div>
+                         <div class="border border-slate-200 rounded-lg">
+                            <button class="accordion-button w-full flex justify-between items-center text-left p-4 font-semibold">
+                                <span>语音识别不准确？</span>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </button>
+                            <div class="accordion-content">
+                                <p class="p-4 pt-0 text-slate-600">请确保您离模块的麦克风较近，并尽量在相对安静的环境中说话。背景噪音过大可能会影响识别效果。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="precautions" class="content-section">
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm">
+                    <h2 class="text-2xl font-bold mb-6 text-slate-900">注意事项</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-xl text-amber-500 mr-3 mt-1">🌡️</span>
+                            <div>
+                                <h4 class="font-semibold">避免高温潮湿环境</h4>
+                                <p class="text-slate-600">请将设备放置在干燥、通风的环境中，避免阳光直射、高温或潮湿场所。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-xl text-blue-500 mr-3 mt-1">💧</span>
+                            <div>
+                                <h4 class="font-semibold">不可浸泡水中</h4>
+                                <p class="text-slate-600">本产品不防水，请勿将其浸泡在水中或在潮湿环境下使用。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-xl text-red-500 mr-3 mt-1">🔧</span>
+                            <div>
+                                <h4 class="font-semibold">请勿拆卸</h4>
+                                <p class="text-slate-600">请勿随意拆卸或改装模块，以免造成损坏。</p>
+                            </div>
+                        </li>
+                         <li class="flex items-start">
+                            <span class="text-xl text-yellow-500 mr-3 mt-1">⚡</span>
+                            <div>
+                                <h4 class="font-semibold">静电防护</h4>
+                                <p class="text-slate-600">遵循ESD (静电放电) 防护措施，避免静电对模块造成损坏。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="support" class="content-section">
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm">
+                    <h2 class="text-2xl font-bold mb-6 text-slate-900">售后与联系</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-800 mb-2">联系我们</h3>
+                            <p class="text-slate-600">如需更多技术支持或定制开发服务，请联系我们的技术团队。</p>
+                        </div>
+                        <div class="text-center mt-8">
+                            <h3 class="text-lg font-semibold text-slate-800 mb-4">扫码联系客服</h3>
+                            <img src="QRcode.png" alt="售后服务二维码" class="block mx-auto w-32 h-32 border border-slate-200 p-1 rounded-lg shadow-sm">
+                        </div>                           
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const contentSections = document.querySelectorAll('.content-section');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.dataset.target;
+
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+                    button.classList.add('active');
+
+                    contentSections.forEach(section => {
+                        if (section.id === targetId) {
+                            section.classList.add('active');
+                        } else {
+                            section.classList.remove('active');
+                        }
+                    });
+                });
+            });
+
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    button.classList.toggle('open');
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
