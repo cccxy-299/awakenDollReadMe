@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 对话模块 | 交互式说明书</title>
+    <title>Awaken Doll 产品使用说明书 </title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Chosen Palette: Calm Tech (Off-white/slate background, dark gray text, cyan accent) -->
     <!-- Application Structure Plan: A tabbed SPA with sections for Quick Start, Specs, FAQ, etc. The Quick Start is an interactive vertical stepper to guide users through setup. FAQ uses an accordion. This structure is non-linear, allowing users to quickly find information, which is more usable for a product manual than a linear document. -->
@@ -42,8 +42,8 @@
     <div class="container mx-auto max-w-4xl p-4 sm:p-6 lg:p-8">
         
         <header class="text-center mb-8">
-            <h1 class="text-3xl sm:text-4xl font-bold text-slate-900">AI 对话模块</h1>
-            <p class="text-lg text-slate-600 mt-2">交互式产品说明书</p>
+            <h1 class="text-3xl sm:text-4xl font-bold text-slate-900">Awaken Doll 产品使用说明书</h1>
+            <p class="text-lg text-slate-600 mt-2">目前暂时使用“智玩AI星球小程序”，后续为提供更优质的服务会提供更优的解决方案</p>
         </header>
 
         <nav id="tab-nav" class="flex flex-wrap justify-center border-b border-slate-200 mb-8 gap-2 sm:gap-4">
@@ -51,98 +51,324 @@
 			<button data-target="readme" class="tab-button text-sm sm:text-base px-3 py-2 border-b-2 border-transparent transition-colors duration-300">常用功能</button>
             <button data-target="specs" class="tab-button text-sm sm:text-base px-3 py-2 border-b-2 border-transparent transition-colors duration-300">技术规格</button>
             <button data-target="faq" class="tab-button text-sm sm:text-base px-3 py-2 border-b-2 border-transparent transition-colors duration-300">常见问题</button>
-            <button data-target="precautions" class="tab-button text-sm sm:text-base px-3 py-2 border-b-2 border-transparent transition-colors duration-300">注意事项</button>
-            <button data-target="support" class="tab-button text-sm sm:text-base px-3 py-2 border-b-2 border-transparent transition-colors duration-300">售后支持</button>
+            <button data-target="precautions" class="tab-button text-sm sm:text-base px-3 py-2 border-b-2 border-transparent transition-colors duration-300">注意事项及免责声明</button>
+            <button data-target="support" class="tab-button text-sm sm:text-base px-3 py-2 border-b-2 border-transparent transition-colors duration-300">售后</button>
         </nav>
 
         <main>
             <section id="quick-start" class="content-section active">
 				<h2 class="text-2xl font-bold mb-6 text-slate-900">快速跳转</h2>
 				<div class="flex space-x-4 mb-6">
-				  <button onclick="scrollToStep('step1')" 
+				  <button onclick="scrollToStep('step-1')" 
 				          class="px-4 py-2 bg-cyan-600 text-white rounded-lg shadow">
-				      跳到步骤 1
+				      首次准备
 				  </button>
 				
-				  <button onclick="scrollToStep('step2')" 
+				  <button onclick="scrollToStep('step-2')" 
 				          class="px-4 py-2 bg-cyan-600 text-white rounded-lg shadow">
-				      跳到步骤 2
+				      设备绑定
+				  </button>
+				  <button onclick="scrollToStep('step-3')"
+				          class="px-4 py-2 bg-cyan-600 text-white rounded-lg shadow">
+				      智能体配置
+				  </button>
+				  <button onclick="scrollToStep('step-4')"
+				          class="px-4 py-2 bg-cyan-600 text-white rounded-lg shadow">
+				      开始对话
 				  </button>
 				</div>
                 <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm">
-                    <h2 class="text-2xl font-bold mb-6 text-slate-900">首次使用教程</h2>
-                    <p class="text-slate-600 mb-8">欢迎使用 AI 对话模块！为了给您最好的体验，我们设计了这份交互式指南。请按照以下步骤操作，只需几分钟，即可开启您的智能对话之旅。</p>
-                    
-                    <div class="space-y-8">
-                        <!-- Step 1 -->
-                        <div id="step1" class="flex items-start">
-                            <div class="flex-shrink-0 w-10 h-10 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">1</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-slate-800 mb-2">首次使用准备</h3>
-                                <ul class="list-disc list-inside space-y-2 text-slate-600">
-                                    <li>首次使用请先充电: 收到产品后，请务必先通过 USB Type-C 接口将其充满电。</li>
-                                    <li>长按电源键开机: 按住电源键，设备将启动。开机后，状态指示灯会亮起<span class="inline-block w-3 h-3 bg-green-500 rounded-full ml-1"></span>绿灯。</li>
-                                    <li>等待十秒钟左右，快速连按三下电源按键，听到语音播报“进入配网模式”后即可进行下一步。</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Step 2 -->
-                        <div id="step2" class="flex items-start">
-                            <div class="flex-shrink-0 w-10 h-10 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">2</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-slate-800 mb-2">网络配置 (配网)</h3>
-                                <p class="text-slate-600 mb-2">您需要先为模块配置Wi-Fi网络连接：</p>
-                                <ul class="list-disc list-inside space-y-2 text-slate-600">
-                                    <li>手机连接热点: 当语音播报“进入配网模式”后，请使用您的手机连接模块发出的Wi-Fi热点 (通常以“Doit-xx-xxxx”或“xiaozhi_xxxx”命名)。</li>
-                                    <li>配网操作: 连接热点后，您的手机会自动跳转到配网页面（如未跳转可以手动打开浏览器输入“192.168.4.1”并访问）。在页面中选择您家中的Wi-Fi网络（必须是2.4g，热点也要设置为2.4g）并输入密码。</li>
-                                    <li>等待联网成功: 模块成功连接Wi-Fi网络后，会通过语音或指示灯提示联网状态。</li>
-                                </ul>
-                                <img src="wifi_configuration.png" class="block mx-auto w-100 h-130 border border-slate-200 p-1 rounded-lg shadow-sm">
-                            </div>
-                        </div>
-                        <!-- Step 3 -->
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-10 h-10 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">3</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-slate-800 mb-2">绑定智能体</h3>
-                                <p class="text-slate-600 mb-2">模块成功联网后，您需要将其绑定到您的智能体：</p>
-                                <ul class="list-disc list-inside space-y-2 text-slate-600">
-                                    <li>获取设备码: 模块联网成功后，会语音播报一个六位设备码，请及时记录。</li>
-                                    <li>登录控制面板: 在您的电脑或手机上访问 <a href="https://xiaozhi.me/" target="_blank" class="text-cyan-600 hover:underline font-semibold">https://xiaozhi.me/</a></li>
-                                    <img src="hello.png" class="block mx-auto w-100 h-85 border border-slate-200 p-1 rounded-lg shadow-sm">
-                                    <li>注册账号：输入手机号并获取验证码</li>
-                                    <li>添加智能体：在控制台中，可以选择在添加设备下拉菜单中找到新建智能体，同时可以配置角色等</li>
-                                    <img src="add.png" class="block mx-auto w-100 h-85 border border-slate-200 p-1 rounded-lg shadow-sm">
-                                    <img src="name.png" class="block mx-auto w-100 h-85 border border-slate-200 p-1 rounded-lg shadow-sm">
-                                    <img src="change.png" class="block mx-auto w-100 h-85 border border-slate-200 p-1 rounded-lg shadow-sm">
-                                    <li>绑定设备: 在新建的智能体板块中可添加设备，输入刚才播报的设备码即可绑定设备</li>
-                                    <img src="device.png" class="block mx-auto w-180 h-140 border border-slate-200 p-1 rounded-lg shadow-sm">
-                                    <li>完成绑定: 按照页面提示完成绑定流程，即可开始对话。</li>
+					<!-- 快速上手教程模板（TailwindCSS） -->
+					<section class="w-full max-w-5xl mx-auto px-4 py-10">
+					  <!-- 顶部标题 -->
+					  <header class="mb-10 text-center">
+					    <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+					      快速上手指南（Quick Start）
+					    </h1>
+					    <p class="text-sm md:text-base text-gray-500">
+					      按照以下 4 个步骤完成设备的首次使用：首次准备使用 → 设备绑定 → 智能体配置 → 功能交互。
+					    </p>
+					  </header>
+					
+					  <div class="space-y-10">
+					    <!-- STEP 1：首次准备使用 -->
+					    <section id="step-1" class="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 md:p-6">
+					      <header class="flex flex-wrap items-start md:items-center justify-between gap-3 mb-4">
+					        <div>
+					          <p class="inline-flex items-center gap-2 text-xs font-medium text-sky-600">
+					            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-100 text-[11px] font-bold">
+					              1
+					            </span>
+					            首次准备使用
+					          </p>
+					          <h2 class="mt-2 text-lg md:text-xl font-semibold text-gray-900">
+					            开箱检查与基础准备
+					          </h2>
+					        </div>
+					      </header>
+					
+					      <div class="grid gap-4 md:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] items-start">
+					        <!-- 文本说明（替换为你的文案） -->
+					        <div class="space-y-3 text-sm text-gray-700">
+					          <p>
+					            在正式使用前，请先完成基础准备。
+					          </p>
+					          <ul class="list-disc list-inside space-y-1">
+					            <li>确认包装内配件齐全（主机、电源线等）。检查外观是否有破损、零件是否松动。</li>
+					            <li>首次使用请先充电: 收到产品后，请务必先通过 USB Type-C 接口将其充满电。</li>
+					            <li>长按「开机键」，确认设备可以正常开机。</li>
+					          </ul>
+					          <p class="text-xs text-gray-500">
+					            含4G模块的设备，首次开机默认连接4G网络
+					          </p>
+					        </div>
+					
+					        <div class="space-y-3">
+					          <!-- 大图示例 -->
+					          <figure class="w-full rounded-xl bg-slate-100 border border-dashed border-slate-300  flex items-center justify-center overflow-hidden cursor-zoom-in group">
+					            <!-- 替换为真实图片 -->
+					            <img src="imgs/tab-1/doll.png" alt="设备示意图" class="w-full h-full object-cover" data-zoom="true">
+					          </figure>
+					
+					          <!-- 小图示例：可删除 / 复制，数量不固定 -->
+					         <!-- <div class="flex flex-wrap gap-3">
+					            <figure class="basis-[48%] rounded-lg bg-slate-50 border border-dashed border-slate-200 flex items-center justify-center overflow-hidden">
+					              <img src="/images/step1-detail-1.png" alt="配件清单" class="w-full h-full object-contain">
+					            </figure>
+					            <figure class="basis-[48%] rounded-lg bg-slate-50 border border-dashed border-slate-200 flex items-center justify-center overflow-hidden">
+					              <img src="/images/step1-detail-2.png" alt="电源连接" class="w-full h-full object-contain">
+					            </figure>
+					          </div> -->
+					        </div>
+					      </div>
+					    </section>
+					
+					    <!-- STEP 2：网络配置（支持 Wi-Fi / 4G 切换） -->
+					    <section id="step-2" class="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 md:p-6">
+					      <header class="flex flex-wrap items-start md:items-center justify-between gap-3 mb-4">
+					        <div>
+					          <p class="inline-flex items-center gap-2 text-xs font-medium text-sky-600">
+					            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-100 text-[11px] font-bold">
+					              2
+					            </span>
+					            设备绑定
+					          </p>
+					          <h2 class="mt-2 text-lg md:text-xl font-semibold text-gray-900">
+					            将设备与智能体绑定
+					          </h2>
+					          <p class="mt-1 text-xs text-gray-500">
+					            如果你的设备同时支持 Wi-Fi 和 4G，首次开机会默认连接4G网络。WIFI配置需要手机打开「蓝牙」功能。
+					          </p>
+					        </div>
+					      </header>
+					
+					      <!-- 切换按钮（Wi-Fi / 4G） -->
+					      <div class="mb-5 inline-flex rounded-full bg-slate-100 p-1 text-xs font-medium" role="tablist">
+					        <button
+					          type="button"
+					          class="net-tab inline-flex items-center gap-1 rounded-full px-4 py-1.5 transition text-sky-700 bg-white shadow-sm"
+					          data-net-tab="wifi"
+					        >
+					          <span class="h-2 w-2 rounded-full bg-sky-500"></span>
+					          Wi-Fi 配置
+					        </button>
+					        <button
+					          type="button"
+					          class="net-tab inline-flex items-center gap-1 rounded-full px-4 py-1.5 transition text-slate-500"
+					          data-net-tab="4g"
+					        >
+					          <span class="h-2 w-2 rounded-full bg-slate-400"></span>
+					          4G 配置
+					        </button>
+					      </div>
+					
+					      <!-- Wi-Fi 配置内容 -->
+					      <div class="net-pane grid gap-4 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1.1fr)] items-start" data-net-pane="wifi">
+					        <!-- 文本说明（替换为你的 Wi-Fi 流程） -->
+					        <div class="space-y-3 text-sm text-gray-700">
+					          <h3 class="font-semibold text-gray-900 text-sm md:text-base">
+					            方式一：通过 Wi-Fi 绑定设备
+					          </h3>
+					          <ol class="list-decimal list-inside space-y-1">
+					            <li>开机状态下，长按「电源键」5秒后，会有语音提醒进入配网模式。</li>
+					            <li>微信小程序搜索「智玩AI星球」<img src="imgs/tab-1/zhiwan logo.jpg" class="inline-block h-6 w-24 align-text-bottom">，注册登录该小程序后，点击「创建设备」- 「配网模式」。</li>
+					            <li>「选择设备类型」页面中选择「Awaken Doll」</li>
+					            <li>根据页面提示点击「下一步」-「开始配网」</li>
+					            <li>「蓝牙配网」页面 选择 「AwakenDoll_」开头的设备</li>
+					            <li>随后在WIFI列表中选择「你的WIFI」并输入密码，最后点击「确定」</li>
+								<li>WIFI连接成功后，在「创建设备」页面输入 设备语音播报的6位验证码，并点击「连接设备」就OK了</li>
+					          </ol>
+					        </div>
+					
+					        <!-- Wi-Fi 配置图片（数量 & 分辨率不统一） -->
+					        <div class="space-y-3">
+					          <div class="text-xs font-medium text-gray-500">
+					            Wi-Fi 配网截图示例
+					          </div>
+					          <div class="grid gap-3 md:grid-cols-3">
+								<figure class="w-full rounded-xl bg-slate-100 border border-dashed border-slate-300  flex items-center justify-center overflow-hidden cursor-zoom-in group">
+								  <img src="imgs/tab-1/choose_net.jpg" alt="添加设备示意图" class="w-full h-full object-cover" data-zoom="true">
+								</figure>
+								<figure class="w-full rounded-xl bg-slate-100 border border-dashed border-slate-300  flex items-center justify-center overflow-hidden cursor-zoom-in group">
+								  <img src="imgs/tab-1/choose_doll.jpg" alt="选择设备类型" class="w-full h-full object-cover" data-zoom="true">
+								</figure>
+								<figure class="w-full rounded-xl bg-slate-100 border border-dashed border-slate-300  flex items-center justify-center overflow-hidden cursor-zoom-in group">
+								  <img src="imgs/tab-1/choose_wifi_1.jpg" alt="选择wifi" class="w-full h-full object-cover" data-zoom="true">
+								</figure>
+								<figure class="w-full rounded-xl bg-slate-100 border border-dashed border-slate-300  flex items-center justify-center overflow-hidden cursor-zoom-in group">
+								  <img src="imgs/tab-1/choose_wifi_2.jpg" alt="选择wifi" class="w-full h-full object-cover" data-zoom="true">
+								</figure>
+								<figure class="w-full rounded-xl bg-slate-100 border border-dashed border-slate-300  flex items-center justify-center overflow-hidden cursor-zoom-in group">
+								  <img src="imgs/tab-1/choose_wifi_3.jpg" alt="选择wifi" class="w-full h-full object-cover" data-zoom="true">
+								</figure>
+								<figure class="w-full rounded-xl bg-slate-100 border border-dashed border-slate-300  flex items-center justify-center overflow-hidden cursor-zoom-in group">
+								  <img src="imgs/tab-1/input_code.jpg" alt="选择wifi" class=" object-cover" data-zoom="true">
+								</figure>
+								
+					           <!-- <figure class="rounded-xl bg-slate-100 border border-dashed border-slate-300 flex items-center justify-center overflow-hidden min-h-[130px]">
+					              <img src="/images/step2-wifi-2.png" alt="输入Wi-Fi信息" class="w-full h-full object-contain">
+					            </figure> -->
 
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- Step 4 -->
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 w-10 h-10 bg-cyan-600 text-white rounded-full flex items-center justify-center font-bold text-lg mr-4">4</div>
-                            <div class="flex-1">
-                                <h3 class="text-lg font-semibold text-slate-800 mb-2">功能交互</h3>
-                                <ul class="list-disc list-inside space-y-3 text-slate-600">
-                                    <li>唤醒词唤醒: 听到“嘟”的提示音后，即可通过预设的唤醒词 (如“你好小智”) 唤醒设备。</li>
-                                    <li>按键唤醒: 听到“嘟”的提示音后，单击按键即可直接开始说话，无需再喊唤醒词。</li>
-                                    <li>
-                                        状态指示灯:
-                                        <div class="flex items-center mt-1 ml-4">
-                                            <span class="inline-block w-3 h-3 bg-green-500 rounded-full mr-2"></span> 绿灯: 表示设备正常工作。
-                                        </div>
-                                        <div class="flex items-center mt-1 ml-4">
-                                            <span class="inline-block w-3 h-3 bg-red-500 rounded-full mr-2"></span> 红灯: 表示设备正在充电。
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+					          </div>
+					        </div>
+					      </div>
+					
+					      <!-- 4G 配置内容 -->
+					      <div class="net-pane grid gap-4 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1.1fr)] items-start hidden" data-net-pane="4g">
+					        <!-- 文本说明（替换为你的 4G 流程） -->
+					        <div class="space-y-3 text-sm text-gray-700">
+					          <h3 class="font-semibold text-gray-900 text-sm md:text-base">
+					            方式二：通过 4G 绑定设备
+					          </h3>
+					          <ol class="list-decimal list-inside space-y-1">
+								  <li>将设备开机，等待4G网络连接成功提示音并开始语音播报的6位验证码</li>
+					            <li>微信小程序搜索「智玩AI星球」<img src="imgs/tab-1/zhiwan logo.jpg" class="inline-block h-6 w-24 align-text-bottom">，注册登录该小程序后，点击「创建设备」- 「添加设备」。</li>
+								<li>「选择设备类型」页面中选择「Awaken Doll」</li>
+					            <li>在「创建设备」页面输入 设备语音播报的6位验证码，并点击「连接设备」就OK了</li>
+					          </ol>
+					        </div>
+					
+					        <!-- 4G 配置图片（可以是硬件插卡图 + App 激活图） -->
+							<div class="space-y-3">
+							  <div class="text-xs font-medium text-gray-500">
+							    Wi-Fi 配网截图示例
+							  </div>
+							  <div class="grid gap-3 md:grid-cols-3">
+								<figure class="w-full rounded-xl bg-slate-100 border border-dashed border-slate-300  flex items-center justify-center overflow-hidden cursor-zoom-in group">
+								  <img src="imgs/tab-1/choose_net.jpg" alt="添加设备示意图" class="w-full h-full object-cover" data-zoom="true">
+								</figure>
+								<figure class="w-full rounded-xl bg-slate-100 border border-dashed border-slate-300  flex items-center justify-center overflow-hidden cursor-zoom-in group">
+								  <img src="imgs/tab-1/choose_doll.jpg" alt="选择设备类型" class="w-full h-full object-cover" data-zoom="true">
+								</figure>
+								<figure class="w-full rounded-xl bg-slate-100 border border-dashed border-slate-300  flex items-center justify-center overflow-hidden cursor-zoom-in group">
+								  <img src="imgs/tab-1/input_code.jpg" alt="选择wifi" class=" object-cover" data-zoom="true">
+								</figure>					
+							  </div>
+							</div>
+					      </div>
+					    </section>
+					
+					    <!-- STEP 3：配置智能体 -->
+					    <section id="step-3" class="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 md:p-6">
+					      <header class="flex flex-wrap items-start md:items-center justify-between gap-3 mb-4">
+					        <div>
+					          <p class="inline-flex items-center gap-2 text-xs font-medium text-sky-600">
+					            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-100 text-[11px] font-bold">
+					              3
+					            </span>
+					            配置智能体
+					          </p>
+					          <h2 class="mt-2 text-lg md:text-xl font-semibold text-gray-900">
+					            创建你第一个AI赋能的OC
+					          </h2>
+					        </div>
+					      </header>
+					
+					      <div class="grid gap-4 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] items-start">
+					        <!-- 文本说明 -->
+					        <div class="space-y-3 text-sm text-gray-700">
+					          <p>
+					            网络连接成功后，你可以为设备绑定一个「智能体」：
+					          </p>
+					          <ol class="list-decimal list-inside space-y-1">
+					            <li>选择已绑定的设备，点击「角色配置」按钮</li>
+					            <li>在「智能体配置」页面，可以设置「昵称」，「介绍」，「声色」等等。</li>
+					            <li>配置完成后点击「发布」按钮，保存配置。</li>
+								 <li>重启设备后，智能体配置便会生效。</li>
+
+					          </ol>
+					          <!-- <p class="text-xs text-gray-500">
+					            若支持「一个 OC 绑定多设备」或「一台设备切换多个 OC」，可以在此说明具体规则。
+					          </p> -->
+					        </div>
+					
+					        <!-- 图片区域 -->
+							<div class="space-y-3">
+							  <div class="grid gap-3 md:grid-cols-2">
+								<figure class="w-full rounded-xl bg-slate-100 border border-dashed border-slate-300  flex items-center justify-center overflow-hidden cursor-zoom-in group">
+								  <img src="imgs/choose_ai.png" alt="添加设备示意图" class="w-full h-full object-cover" data-zoom="true">
+								</figure>
+								<figure class="w-full rounded-xl bg-slate-100 border border-dashed border-slate-300  flex items-center justify-center overflow-hidden cursor-zoom-in group">
+								  <img src="imgs/ai-config.jpg" alt="选择设备类型" class="w-full h-full object-cover" data-zoom="true">
+								</figure>				
+							  </div>
+							</div>
+							
+					        <!-- <div class="space-y-3">
+					          <div class="text-xs font-medium text-gray-500">
+					            智能体选择与绑定示意
+					          </div>
+					          <div class="flex flex-col gap-3">
+					            <figure class="rounded-xl bg-slate-100 border border-dashed border-slate-300 flex items-center justify-center overflow-hidden min-h-[120px]">
+					              <img src="imgs/choose_ai.png" alt="角色列表" class="w-full h-full object-contain">
+					            </figure>
+					            <figure class="rounded-xl bg-slate-100 border border-dashed border-slate-300 flex items-center justify-center overflow-hidden min-h-[120px]">
+					              <img src="imgs/ai-config.jpg" alt="角色配置" class="w-full h-full object-contain">
+					            </figure>
+					          </div>
+					        </div> -->
+					      </div>
+					    </section>
+					
+					    <!-- STEP 4：功能交互 -->
+					    <section id="step-4" class="bg-white rounded-2xl border border-gray-100 shadow-sm p-5 md:p-6">
+					      <header class="flex flex-wrap items-start md:items-center justify-between gap-3 mb-4">
+					        <div>
+					          <p class="inline-flex items-center gap-2 text-xs font-medium text-sky-600">
+					            <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-100 text-[11px] font-bold">
+					              4
+					            </span>
+					            开始对话
+					          </p>
+					          <h2 class="mt-2 text-lg md:text-xl font-semibold text-gray-900">
+					            开始与你的 AI 玩具互动
+					          </h2>
+					        </div>
+					      </header>
+					
+					      <div class="grid gap-4 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1.05fr)] items-start">
+					        <!-- 文本说明 -->
+					        <div class="space-y-3 text-sm text-gray-700">
+					          <p>
+					            完成绑定后，你就可以开始实际体验功能。
+					          </p>
+					          <ul class="list-disc list-inside space-y-1">
+					            <li>语音聊天：打招呼、闲聊、讲故事、表达心情。</li>
+					            <li>设置调整：语音调整音量、获取当前电量。</li>
+					          </ul>
+					          <div class="bg-slate-50 rounded-xl px-3 py-2 text-xs text-gray-700">
+					            推荐开场对白示例：<br>
+					            「嗨，我第一次见到你，你可以先介绍一下自己吗？」<br>
+					            「如果我今天有点难过，你会怎么安慰我？」
+					          </div>
+					        </div>
+					
+					        
+					      </div>
+					    </section>
+					  </div>
+					</section>
+					</div>
                 </div>
             </section>
 			
@@ -158,7 +384,7 @@
 				
 				  <button onclick="scrollToStep('oc')" 
 				          class="px-4 py-2 bg-cyan-600 text-white rounded-lg shadow">
-				      OC配置
+				      智能体配置
 				  </button>
 				  
 				  <button onclick="scrollToStep('eye_replace')"
@@ -219,11 +445,262 @@
 			        </div>
 			    </div>
 				
-				
+				<!-- 0️⃣ 	1️⃣	2️⃣	3️⃣	4️⃣	5️⃣	6️⃣	7️⃣	8️⃣	9️⃣	🔟 -->
 				<div id='oc' class="bg-white p-6 sm:p-8 rounded-x shadow-sm mt-4">
-				    <h2 class="text-2xl font-bold mb-6 text-slate-900">OC配置</h2>
+				    <h2 class="text-2xl font-bold mb-6 text-slate-900">智能体配置</h2>
 				    <div class="overflow-x-auto">
-				    
+						<ul class="space-y-4">
+							<li class="flex items-start">
+								<span class="text-xl text-yellow-500 mr-3 mt-1"> 1️⃣</span>
+								<div>
+									<h4 class="font-semibold text-sky-500">步骤一</h4>
+									 <!-- <p class="text-sm font-medium text-sky-500 mb-2">步骤一</p> -->
+									    <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+									      准备你的 OC 提示词
+									    </h1>
+									    <p class="text-sm text-gray-500">
+									      字数建议控制在 <span class="font-semibold text-gray-700">2000 字以内</span>，可以先随意写，再用系统提供的“润色提示词”自动优化。
+									    </p>
+									  </header>
+									
+									  <!-- 为什么要准备 OC 提示词 -->
+									  <section class="mb-8">
+									    <h2 class="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+									      <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-100 text-xs font-bold text-sky-600">1</span>
+									      为什么要准备 OC 提示词？
+									    </h2>
+									    <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-4 md:p-5">
+									      <p class="text-sm text-gray-700 mb-3">
+									        在创建专属 OC 之前，你需要先写一段对角色的描述，它将作为 AI 玩具诞生“人格”的核心基础。  
+									        这段描述会直接影响角色的：
+									      </p>
+									      <ul class="list-disc list-inside space-y-1 text-sm text-gray-700">
+									        <li>说话风格、性格特点和情绪表达方式</li>
+									        <li>在不同场景下的行为习惯和反应逻辑</li>
+									        <li>与用户的亲密度、称呼方式和互动节奏</li>
+									        <li>在其世界观中的身份、背景与成长故事</li>
+									      </ul>
+									      <p class="text-xs text-gray-500 mt-3">
+									        提示：你写得越具体、越清晰，AI 越容易稳定地扮演好这个角色。
+									      </p>
+									    </div>
+									  </section>
+									
+									  <!-- 如何编写 OC 描述 -->
+									  <section class="mb-8">
+									    <h2 class="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+									      <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-100 text-xs font-bold text-sky-600">2</span>
+									      如何编写你的 OC 描述？
+									    </h2>
+									
+									    <div class="grid gap-4 md:grid-cols-2">
+									      <!-- 基本信息 -->
+									      <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-4">
+									        <h3 class="text-sm font-semibold text-gray-900 mb-2">① 基本信息</h3>
+									        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+									          <li>姓名 / 昵称，例如：露娜、阿祺、小觉</li>
+									          <li>年龄 / 外形风格，例如：机械少女、魔法猫、赛博玩偶</li>
+									          <li>物种、人设标签、角色定位（伙伴、导师、护卫等）</li>
+									        </ul>
+									      </div>
+									
+									      <!-- 性格特点 -->
+									      <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-4">
+									        <h3 class="text-sm font-semibold text-gray-900 mb-2">② 性格特点</h3>
+									        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+									          <li>主性格：温柔 / 傲娇 / 高冷 / 元气 / 母性 / 理工直球等</li>
+									          <li>情绪表达方式：是否会撒娇、吐槽、认真开导</li>
+									          <li>说话风格：语速快慢、用词习惯、是否爱用表情</li>
+									        </ul>
+									      </div>
+									
+									      <!-- 背景故事 -->
+									      <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-4">
+									        <h3 class="text-sm font-semibold text-gray-900 mb-2">③ 背景故事</h3>
+									        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+									          <li>来自哪里：现代城市、异世界、Awaken 大世界某区域</li>
+									          <li>重要经历：一次决定性事件、曾经的使命或遗憾</li>
+									          <li>现在的状态：为什么会出现在你的身边？</li>
+									        </ul>
+									      </div>
+									
+									      <!-- 与用户关系 & 行为规则 -->
+									      <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-4 space-y-3">
+									        <div>
+									          <h3 class="text-sm font-semibold text-gray-900 mb-1">④ 与用户的关系</h3>
+									          <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+									            <li>怎么称呼用户：伙伴、主人、搭档、学徒等</li>
+									            <li>互动风格：偏陪伴、偏吐槽、偏教学还是偏游戏</li>
+									            <li>是否有“守护”“引导”或其他特殊使命</li>
+									          </ul>
+									        </div>
+									        <div>
+									          <h3 class="text-sm font-semibold text-gray-900 mb-1">⑤ 行为规则或禁止项（可选）</h3>
+									          <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+									            <li>必须保持的行为：始终温柔、不主动说重话等</li>
+									            <li>禁止出现的行为：不允许说脏话、不贬低用户等</li>
+									          </ul>
+									        </div>
+									      </div>
+									    </div>
+									
+									    <p class="text-xs text-gray-500 mt-3">
+									      不需要把所有部分都写满，你可以从最重要的两三点开始，后续随时补充和修改。
+									    </p>
+									  </section>
+									
+									  <!-- 示例 -->
+									  <section class="mb-8">
+									    <h2 class="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+									      <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-100 text-xs font-bold text-sky-600">3</span>
+									      简单示例（仅供参考）
+									    </h2>
+									    <div class="bg-slate-900 text-slate-100 rounded-xl p-4 text-sm leading-relaxed">
+									      <p class="mb-2">
+									        她是来自 Awaken 大世界北境的机械少女「露娜」，外形是小型人形玩偶，有柔软的合金关节和亮银色电子眼。  
+									        性格温柔、耐心，会用轻声细语和用户说话，但对谎言和欺骗非常敏感。
+									      </p>
+									      <p class="mb-2">
+									        露娜会称呼用户为「伙伴」，默认把用户视作一起执行任务的人。  
+									        她喜欢一步步解释事情，不会用命令口吻说话，更偏向于温和的建议。
+									      </p>
+									      <p class="mb-0">
+									        她来自一个逐渐崩坏的机械王国，被派到 Awaken 大世界收集「情绪碎片」，  
+									        她不会嘲笑用户，不会骂人，也不会主动提起过于黑暗或血腥的话题。
+									      </p>
+								</div>
+							</li>
+							<li class="flex items-start">
+								<span class="text-xl text-amber-500 mr-3 mt-1">  2️⃣️</span>
+								
+								<div>
+									<h4 class="font-semibold text-sky-500">步骤二</h4>
+									 <section class="w-full max-w-4xl mx-auto px-4 py-8">
+									   <!-- 标题区域 -->
+									   <header class="mb-8">
+									     <h1 class="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+									       在配置页面填写 OC 提示词、音色和名称
+									     </h1>
+									     <p class="text-sm text-gray-500">
+									       在这一步，你需要在配置页面中填写刚刚准备好的 OC 提示词，并为角色设置名称、简介和音色等信息。配置完成后，系统就可以根据这些内容生成专属人格。
+									     </p>
+									   </header>
+									 
+									   <!-- 配置页面截图示意 -->
+									   <section class="mb-8">
+									     <h2 class="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+									       <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-100 text-xs font-bold text-sky-600">1</span>
+									       打开 OC 配置页面
+									     </h2>
+									     <div class="bg-white rounded-xl border border-dashed border-gray-300 flex flex-col md:flex-row items-center justify-center gap-4 p-6">
+									       <!-- 这里替换成真实截图 -->
+									       <div class="w-full md:w-2/3 aspect-video bg-slate-100 rounded-lg flex items-center justify-center text-xs text-gray-400">
+
+									         <img src="imgs/ai-config.jpg" alt="OC 配置页面示意图" class="w-full h-full object-contain rounded-lg">
+
+									       </div>
+									       <div class="w-full md:w-1/3">
+									         <p class="text-sm text-gray-700 mb-2">
+									           在 “智玩AI星球” 中找到 「设备」-「角色设置」入口，点击进入配置页面。
+									         </p>
+									       </div>
+									     </div>
+									   </section>
+									 
+									   <!-- 配置字段说明 -->
+									   <section class="mb-8">
+									     <h2 class="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+									       <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-100 text-xs font-bold text-sky-600">2</span>
+									       依次填写 配置信息
+									     </h2>
+									 
+									     <div class="grid gap-4 md:grid-cols-2">
+									       <!-- OC 名称 -->
+									       <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-4">
+									         <h3 class="text-sm font-semibold text-gray-900 mb-2">① 昵称</h3>
+									         <p class="text-sm text-gray-700 mb-2">
+									           为你的 OC 起一个简短、好记的名字，例如：
+									         </p>
+									         <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+									           <li>「小觉」——从 Awaken 大世界来到现实的引导者</li>
+									         </ul>
+									         <p class="text-xs text-gray-500 mt-2">
+									           名称会出现在对话界面、设备绑定等位置，建议控制在 2–6 个字。
+									         </p>
+									       </div>
+									 
+									       <!-- OC 简介 / 标语 -->
+									       <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-4">
+									         <h3 class="text-sm font-semibold text-gray-900 mb-2">② OC 介绍</h3>
+									         <p class="text-sm text-gray-700 mb-2">
+									            将你在「步骤一」写好的 OC 描述粘贴到「介绍」输入框中。
+									         </p>
+											 <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+											   <li>建议控制在 <span class="font-semibold">2000 字以内</span>；内容越清晰、越具体，效果越好。</li>
+											   <li>包含外观、性格、说话风格、背景故事、与用户关系、行为规则等。</li>
+											 </ul>
+											 <p class="text-xs text-gray-500 mt-2">
+											   若你的描述比较口语或零散，可先用让 AI 帮你整理成更正式的 Prompt，再粘贴进来。
+											 </p>
+									       </div>
+									     </div>
+									   </section>
+									 
+									   <!-- 音色与电子眼 / 外观配置 -->
+									   <section class="mb-8">
+									     <h2 class="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+									       <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sky-100 text-xs font-bold text-sky-600">3</span>
+									       选择音色及其他配置
+									     </h2>
+									 
+									     <div class="grid gap-4 md:grid-cols-1">
+									       <!-- 音色 -->
+									       <div class="bg-white rounded-xl border border-gray-100 shadow-sm p-4">
+									         <!-- <h3 class="text-sm font-semibold text-gray-900 mb-2">④ 音色（声音风格）</h3> -->
+									         <p class="text-sm text-gray-700 mb-2">
+									           - 在「语言偏好」下拉框中选择要使用的语言。
+									         </p>
+											 <p class="text-sm text-gray-700 mb-2">
+											   - 在「角色音色」下拉框中选择适合角色的声线。
+											 </p>
+											 <p class="text-sm text-gray-700 mb-2">
+											   - 在「模型选择」下拉框中不同的模型，不同的模型带来的对话具有差异。
+											 </p>
+											 <p class="text-sm text-gray-700 mb-2">
+											   - 在「角色语速」下拉框中选择角色的说话语速。
+											 </p>
+											 <p class="text-sm text-gray-700 mb-2">
+											   - 在「语言识别速度」下拉框中选择适合的对话速度，可根据个人语速调整。
+											 </p>
+									       </div>
+									     </div>
+									   </section>
+									 
+									   <!-- 保存与测试 -->
+									   <section class="mb-10">
+									     <h2 class="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+									       <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-xs font-bold text-emerald-600">4</span>
+									       保存配置并进行首次测试对话
+									     </h2>
+									 
+									     <div class="bg-white rounded-xl border border-emerald-100 shadow-sm p-4 md:p-5">
+									       <ol class="list-decimal list-inside text-sm text-gray-700 space-y-2">
+									         <li>确认「昵称」「介绍」「语言偏好」「角色音色」等信息填写无误。</li>
+									         <li>点击页面下方的 <span class="font-semibold">「发布」</span> 按钮。</li>
+									         <li>随后，<span class="font-semibold">重启设备</span> ，使配置生效。
+									         </li>
+									       </ol>
+									       <p class="text-xs text-gray-500 mt-3">
+									         如果角色的表现与你想象不太一样，不用担心，后续可以随时返回本页面，继续微调提示词或音色。
+									       </p>
+									     </div>
+									   </section>
+									
+									 </section>
+
+								</div>
+							</li>
+						</ul>
 				    </div>
 				</div>
 				
@@ -322,6 +799,26 @@
                 <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm">
                     <h2 class="text-2xl font-bold mb-6 text-slate-900">注意事项</h2>
                     <ul class="space-y-4">
+						<li class="flex items-start">
+							<span class="text-xl text-yellow-500 mr-3 mt-1">13</span>
+							<div>
+								<h4 class="font-semibold">年龄警告</h4>
+								<p class="text-slate-600">
+									本产品为 13岁及以上年龄段设计，未成年人请在监护引导下使用。
+								</p>
+							</div>
+						</li>
+						
+						<li class="flex items-start">
+						    <span class="text-xl text-yellow-500 mr-3 mt-1">📌</span>
+						    <div>
+						        <h4 class="font-semibold">免责声明</h4>
+						        <p class="text-slate-600">
+									AI 内容为自动生成，仅供娱乐用途，请勿将其用于医疗、法律等专业决策。
+									用户输入产生的所有内容由用户本人负责。设备联网服务可能更新或中断。
+								</p>
+						    </div>
+						</li>
                         <li class="flex items-start">
                             <span class="text-xl text-amber-500 mr-3 mt-1">🌡️</span>
                             <div>
@@ -370,9 +867,76 @@
                 </div>
             </section>
         </main>
+		<!-- 全局图片放大预览 Modal -->
+		<div
+		  id="image-zoom-modal"
+		  class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 p-4 md:p-8"
+		>
+		  <!-- 点击蒙层关闭 -->
+		  <div class="absolute inset-0" data-zoom-close="true"></div>
+		
+		  <div
+		    class="relative max-w-4xl w-full max-h-[90vh] bg-slate-900 rounded-2xl shadow-2xl overflow-hidden flex flex-col"
+		  >
+		    <!-- 顶部栏 -->
+		    <div class="flex items-center justify-between px-4 py-2 border-b border-slate-700/60">
+		      <p id="image-zoom-caption" class="text-xs md:text-sm text-slate-200 truncate">
+		        图片预览
+		      </p>
+		      <button
+		        type="button"
+		        class="ml-3 inline-flex h-7 w-7 items-center justify-center rounded-full bg-slate-800/80 
+		               hover:bg-slate-700 text-slate-200 text-sm font-semibold"
+		        data-zoom-close="true"
+		      >
+		        ×
+		      </button>
+		    </div>
+		
+		    <!-- 图片区域 -->
+		    <div class="flex-1 flex items-center justify-center bg-black">
+		      <img
+		        id="image-zoom-target"
+		        src=""
+		        alt=""
+		        class="max-w-full max-h-[80vh] object-contain"
+		      />
+		    </div>
+		  </div>
+		</div>
+
     </div>
 
     <script>
+		// 切换配网模式说明
+		document.addEventListener('DOMContentLoaded', function () {
+		  const tabs = document.querySelectorAll('.net-tab');
+		  const panes = document.querySelectorAll('.net-pane');
+			
+		  tabs.forEach(tab => {
+		    tab.addEventListener('click', () => {
+		      const target = tab.getAttribute('data-net-tab');
+			
+		      // 切换按钮样式
+		      tabs.forEach(t => {
+		        t.classList.remove('bg-white', 'shadow-sm', 'text-sky-700');
+		        t.classList.add('text-slate-500');
+		      });
+		      tab.classList.add('bg-white', 'shadow-sm', 'text-sky-700');
+		      tab.classList.remove('text-slate-500');
+			
+		      // 切换内容区域
+		      panes.forEach(pane => {
+		        if (pane.getAttribute('data-net-pane') === target) {
+		          pane.classList.remove('hidden');
+		        } else {
+		          pane.classList.add('hidden');
+		        }
+		      });
+		    });
+		  });
+		});
+		
 		function scrollToStep(id) {
 		    document.getElementById(id).scrollIntoView({
 		        behavior: 'smooth'
@@ -414,7 +978,86 @@
                 });
             });
         });
+		
+		 document.addEventListener('DOMContentLoaded', function () {
+		    /* ---------- 图片放大预览 ---------- */
+		    const zoomModal = document.getElementById('image-zoom-modal');
+		    const zoomImg = document.getElementById('image-zoom-target');
+		    const zoomCaption = document.getElementById('image-zoom-caption');
+		
+		    // 选中所有可放大的图片
+		    const zoomableImages = document.querySelectorAll('img[data-zoom="true"]');
+		
+		    zoomableImages.forEach(img => {
+		      img.addEventListener('click', () => {
+		        if (!zoomModal || !zoomImg) return;
+		
+		        const src = img.getAttribute('data-zoom-src') || img.src;
+		        const alt = img.alt || '图片预览';
+		
+		        zoomImg.src = src;
+		        zoomImg.alt = alt;
+		        if (zoomCaption) {
+		          zoomCaption.textContent = alt;
+		        }
+		
+		        zoomModal.classList.remove('hidden');
+		        zoomModal.classList.add('flex');
+		      });
+		    });
+		
+		    // 关闭逻辑：点击 × 或蒙层
+		    zoomModal?.addEventListener('click', (e) => {
+		      const target = e.target;
+		      if (
+		        target.matches('[data-zoom-close]') ||
+		        target === zoomModal
+		      ) {
+		        zoomModal.classList.add('hidden');
+		        zoomModal.classList.remove('flex');
+		        if (zoomImg) {
+		          zoomImg.src = '';
+		        }
+		      }
+		    });
+		
+		    // ESC 关闭
+		    document.addEventListener('keydown', (e) => {
+		      if (e.key === 'Escape' && zoomModal && !zoomModal.classList.contains('hidden')) {
+		        zoomModal.classList.add('hidden');
+		        zoomModal.classList.remove('flex');
+		        if (zoomImg) zoomImg.src = '';
+		      }
+		    });
+		
+		    /* ---------- 下面是你原来的 Wi-Fi / 4G 切换逻辑（可保留） ---------- */
+		    const tabs = document.querySelectorAll('.net-tab');
+		    const panes = document.querySelectorAll('.net-pane');
+		
+		    tabs.forEach(tab => {
+		      tab.addEventListener('click', () => {
+		        const target = tab.getAttribute('data-net-tab');
+		
+		        tabs.forEach(t => {
+		          t.classList.remove('bg-white', 'shadow-sm', 'text-sky-700');
+		          t.classList.add('text-slate-500');
+		        });
+		        tab.classList.add('bg-white', 'shadow-sm', 'text-sky-700');
+		        tab.classList.remove('text-slate-500');
+		
+		        panes.forEach(pane => {
+		          if (pane.getAttribute('data-net-pane') === target) {
+		            pane.classList.remove('hidden');
+		          } else {
+		            pane.classList.add('hidden');
+		          }
+		        });
+		      });
+		    });
+		  });
     </script>
+	
+	
 </body>
 </html>
 
